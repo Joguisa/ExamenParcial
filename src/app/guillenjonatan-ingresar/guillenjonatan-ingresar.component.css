@@ -1,0 +1,9 @@
+.ancho {
+  width: 40%;
+}
+
+.container {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

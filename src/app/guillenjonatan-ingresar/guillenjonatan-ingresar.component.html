@@ -1,0 +1,53 @@
+<div class="container">
+  <mat-toolbar>
+    <span>Agregar Producto</span>
+  </mat-toolbar>
+
+  <mat-card style="margin-top: 10px">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="agregarProducto()"
+      (click)="limpiarFormulario()"
+    >
+      <mat-grid-list cols="1" rowHeight="70px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Codigo</mat-label>
+            <input matInput autocomplete="off" formControlName="codigo" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Descripcion</mat-label>
+            <input matInput autocomplete="off" formControlName="descripcion" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Precio Compra</mat-label>
+            <input matInput autocomplete="off" formControlName="pcompra" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="ancho">
+            <mat-label>Precio Venta</mat-label>
+            <input matInput autocomplete="off" formControlName="pventa" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <button
+            type="submit"
+            mat-raised-button
+            [disabled]="form.invalid"
+            color="primary"
+          >
+            Guardar
+          </button>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <button mat-raised-button routerLink="/inicio" color="primary">
+        Consultar
+      </button>
+    </form>
+  </mat-card>
+</div>
